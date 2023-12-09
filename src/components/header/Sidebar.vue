@@ -27,6 +27,7 @@ import Icon from "@jamescoyle/vue-icon";
 import { useSideBar } from "@/hooks/UseSideBar.js";
 import { AdminMenu } from "@/components/menu/AdminMenu.js";
 import { TeacherMenu } from "../menu/TeacherMenu";
+import { DirectorMenu } from "../menu/DirectorMenu";
 
 const role = localStorage.getItem("role");
 
@@ -35,6 +36,8 @@ const returnMenu = () => {
     return AdminMenu;
   } else if (role == "teacher") {
     return TeacherMenu;
+  } else if (role == "director") {
+    return DirectorMenu;
   }
 };
 const menu = returnMenu();

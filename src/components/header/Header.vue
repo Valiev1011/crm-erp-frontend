@@ -64,7 +64,7 @@ const isOpen = useSideBar();
 const image = ref("");
 
 const open = ref(false);
-const rotate = (e) => {
+const frotate = (e) => {
   open.value = !open.value;
   if (open.value) {
     console.log((e.target.style.rotate = "180deg"));

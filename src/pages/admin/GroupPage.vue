@@ -41,7 +41,7 @@
             }}</span>
           </template>
           <template #body_course="{ item }">
-            <span @click="selectOne(item._id)" class="w-full">{{
+            <span @click="selectOne(item?._id)" class="w-full">{{
               `${item?.course?.name ? item?.course?.name : ""}`
             }}</span>
           </template>
@@ -57,20 +57,20 @@
           </template>
           <template #body_start_date="{ item }">
             <span @click="selectOne(item._id)" class="w-full">{{
-              `${formatDate(item.start_date)}`
+              `${formatDate(item?.start_date)}`
             }}</span>
           </template>
           <template #body_end_date="{ item }">
             <span @click="selectOne(item._id)" class="w-full">{{
-              `${formatDate(item.end_date)}`
+              `${formatDate(item?.end_date)}`
             }}</span>
           </template>
           <template #body_time="{ item }">
             <div class="flex flex-col">
-              <span @click="selectOne(item._id)" class="w-full"
-                >{{ `Start Time ${formatTime(item.start_time)}` }}
+              <span @click="selectOne(item?._id)" class="w-full"
+                >{{ `Start Time ${formatTime(item?.start_time)}` }}
               </span>
-              <span> {{ `End Time ${formatTime(item.end_time)}` }}</span>
+              <span> {{ `End Time ${formatTime(item?.end_time)}` }}</span>
             </div>
           </template>
           <template #body_action="{ item }">
@@ -84,7 +84,7 @@
               <svg-icon
                 type="mdi"
                 :path="mdiTrashCanOutline"
-                @click="deleteGroup(item._id)"
+                @click="deleteGroup(item?._id)"
                 class="hover:text-red-900 z-90"
               ></svg-icon>
             </span>

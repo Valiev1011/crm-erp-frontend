@@ -18,7 +18,7 @@
           :isLoading="false"
           @click="openModal()"
           class="px-10"
-          >Add student</v-button
+          >Add Course</v-button
         >
       </div>
       <div class="w-full mt-5">

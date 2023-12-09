@@ -13,9 +13,9 @@
             class="w-[50px] text-center py-1 text-[14px] text-color1 border border-color1 rounded-md hover:bg-color1/10 cursor-pointer"
             :class="
               item?.description
-                ? 'bg-[gray] border-none text-white'
-                : !item?.pass
-                ? 'bg-[red] border-none text-white'
+                ? 'bg-[#e84f2c] border-none text-white'
+                : item?.pass
+                ? 'bg-[green] border-none text-white'
                 : ''
             "
             @click="openModal(item)"

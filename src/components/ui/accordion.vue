@@ -24,7 +24,7 @@
             class="w-[50px] text-center py-1 text-[14px] text-color1 border border-color1 rounded-md hover:bg-color1/10 cursor-pointer"
             :class="
               attend.comment
-                ? 'bg-[gray] border-none text-white'
+                ? 'bg-[#20f25f] border-none text-white'
                 : !attend.participated
                 ? 'bg-[red] border-none text-white'
                 : ''

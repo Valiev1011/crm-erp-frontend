@@ -12,14 +12,14 @@
         <h1 class="text-[#002842] text-[22px] font-semibold uppercase">
           Group ({{ count.length }})
         </h1>
-        <v-button
+        <!-- <v-button
           type="button"
           btn_type="primary"
           :isLoading="false"
           @click="openModal()"
           class="px-10"
           >Add group</v-button
-        >
+        > -->
       </div>
       <div class="w-full mt-5">
         <Table
@@ -36,44 +36,44 @@
             {{ item._id }}
           </template> -->
           <template #body_name="{ item }">
-            <span @click="selectOne(item._id)" class="w-full">{{
+            <span @click="selectOne(item?._id)" class="w-full">{{
               `${item?.name ? item?.name : ""}`
             }}</span>
           </template>
           <template #body_course="{ item }">
-            <span @click="selectOne(item._id)" class="w-full">{{
+            <span @click="selectOne(item?._id)" class="w-full">{{
               `${item?.course?.name ? item?.course?.name : ""}`
             }}</span>
           </template>
           <template #body_room="{ item }">
-            <span @click="selectOne(item._id)" class="w-full">{{
+            <span @click="selectOne(item?._id)" class="w-full">{{
               `${item?.room?.name ? item?.room?.name : ""}`
             }}</span>
           </template>
           <template #body_days="{ item }">
-            <span @click="selectOne(item._id)" class="w-full">{{
+            <span @click="selectOne(item?._id)" class="w-full">{{
               `${item?.days ? "Mon/Wed/Fri" : "Tue/Thu/Sat"}`
             }}</span>
           </template>
           <template #body_start_date="{ item }">
-            <span @click="selectOne(item._id)" class="w-full">{{
-              `${formatDate(item.start_date)}`
+            <span @click="selectOne(item?._id)" class="w-full">{{
+              `${formatDate(item?.start_date)}`
             }}</span>
           </template>
           <template #body_end_date="{ item }">
-            <span @click="selectOne(item._id)" class="w-full">{{
-              `${formatDate(item.end_date)}`
+            <span @click="selectOne(item?._id)" class="w-full">{{
+              `${formatDate(item?.end_date)}`
             }}</span>
           </template>
           <template #body_time="{ item }">
             <div class="flex flex-col">
-              <span @click="selectOne(item._id)" class="w-full"
-                >{{ `Start Time ${formatTime(item.start_time)}` }}
+              <span @click="selectOne(item?._id)" class="w-full"
+                >{{ `Start Time ${formatTime(item?.start_time)}` }}
               </span>
-              <span> {{ `End Time ${formatTime(item.end_time)}` }}</span>
+              <span> {{ `End Time ${formatTime(item?.end_time)}` }}</span>
             </div>
           </template>
-          <template #body_action="{ item }">
+          <!-- <template #body_action="{ item }">
             <span class="flex justify-center items-center gap-2 z-90">
               <svg-icon
                 type="mdi"
@@ -88,7 +88,7 @@
                 class="hover:text-red-900 z-90"
               ></svg-icon>
             </span>
-          </template>
+          </template> -->
         </Table>
         <h1
           v-else
@@ -146,7 +146,6 @@ const header = ref([
   { title: "End date", value: "end_date" },
   { title: "Days", value: "days" },
   { title: "Time", value: "time" },
-  { title: "Action", value: "action" },
 ]);
 
 const count = ref(0);

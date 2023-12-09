@@ -26,7 +26,6 @@
           btn_type="primary"
           :isLoading="store.loading"
           type="submit"
-          @click="checkAttendance"
           class="mt-5 w-full text-[18px]"
         >
           {{ btn_title }}

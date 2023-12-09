@@ -42,7 +42,7 @@ const props = defineProps({
   header: Array,
   data: Array,
 });
-
+console.log(props.data);
 const selectAll = (val) => {
   // console.log(val.target.checked);
 };
